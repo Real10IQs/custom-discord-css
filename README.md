@@ -1,2 +1,3 @@
-# Custom discord style 
-used in Vencord
+# Custom discord style
+[CLICK HERE](style.css)
+apply css via Vencord!
