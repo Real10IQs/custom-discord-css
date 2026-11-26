@@ -1,0 +1,309 @@
+@import url('https://raw.githubusercontent.com/G0d0fninjas/visual-refresh-compact-title-bar/refs/heads/main/desktop.css');
+@import url(https://davart154.github.io/Themes/Snippets/Plugin%20Icon%20Consistency/IconConsistencySource.css);
+
+/*customise top bar*/
+:root {
+    /* controls the vertical position of the window buttons */
+    --vr-header-snippet-top: 0px !important;
+    /* controls the space above the server list */
+    --vr-header-snippet-server-padding: 16px !important;
+    /* controls the space the window buttons get on the channel header, experiment around with this if you get gaps or the buttons overlap! */
+    --vr-header-snippet-space: 140px !important;
+    /* controls the space to the right of the window buttons, good if you are using themes like midnight which add padding to the bar */
+    --vr-header-snippet-button-padding: 5px !important;
+    /* !DESKTOP SNIPPET ONLY! If set to none instead of flex, hides the window control buttons */
+    --vr-header-snippet-winbuttons: flex !important;
+}
+
+/* fix windows button */
+.platform-win
+:not([class*="systemBar"])
+[class*="trailing"] {
+  padding-right: 8px;
+}
+
+/* timestamp button */
+[class*="buttonContainer_2x8-Qn"]:has([aria-label="Insert Timestamp"]) svg { 
+  scale: 1.05 !important;
+}
+
+/* insert time stamp pop up */
+.layerContainer_VVADeK:has(.tooltip_3_v8qp) {
+    display: none !important;
+}
+
+/* hide windows default bar */
+.platform-win [class*="systemBar"] [class*="winButtons"] {
+    display: none !important;
+}
+
+/* Collapse the trailing container that reserves space */
+.platform-win [class*="systemBar"] [class*="trailing"] {
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Ensure no right padding is reserved */
+.platform-win [class*="systemBar"] {
+    padding-right: 0 !important;
+}
+
+/* Live viewer move to the left */
+[class*="viewers_"]:not([class*="rightTrayIcon_ScIiLS"]) {
+    margin-right: calc(var(--vr-header-snippet-space) - 160px) !important;
+}
+
+/* Stream quality offset */
+div[class*="streamQualityIndicator"] {
+    display: none;
+}
+
+/* allows quest buttons to be clickable */
+.tabWrapper_fgRQ5j {
+  -webkit-app-region: no-drag;
+}
+
+/* search/wishlist/orbs on shop page */
+.alignedRightContent__80679 {
+  position: fixed;
+  right: calc(var(--vr-header-snippet-space) - 36px);
+  -webkit-app-region: no-drag;
+}
+
+/* orbs balance on quests page */
+.headerBarContent_tSk_LE .container_CHR0Z4 {
+  position: fixed;
+  right: var(--vr-header-snippet-space);
+  -webkit-app-region: no-drag;
+}
+
+/* Hide quest banner thing */
+.wrapper_jdr5pz {
+  display: none;
+}
+.wrapperVisible_jdr5pz{
+  display: none;
+}
+
+/* Hide minigame leaf */
+.clickable_fErCLM{
+  display: none;
+}
+
+/* Hide threads*/
+[aria-label="Threads"] {
+  display: none;
+}
+
+/* Hide pinned */
+[aria-label="Pinned Messages"] {
+  display: none;
+}
+
+/* Hide notification */
+[aria-label="Notification Settings"] {
+  display: none;
+}
+
+/* Hide back and forward*/
+.backForwardButtons_nS9Yqn {
+  display: none;
+}
+
+/* Hide the Inbox button */
+[aria-label="Inbox"] {
+  display: none;
+}
+
+/* Show chat button on VC */
+[aria-label="Show Chat"] {
+  display: none !important;
+}
+
+/* Hide group DMs & Invite to Voice */
+.animation_MRjIbW {
+  display: none;
+}
+
+/* Hide voice glow */
+.voiceChannelHighlightBorder_Wx6SnQ{
+  display: none;
+}
+.voiceChannelHighlightGlow_Wx6SnQ{
+  display: none;
+}
+
+/* Hide gift */
+.container_ejC3ZL{
+  display: none;
+}
+
+/* Hide help*/
+[aria-label="Help"] {
+  display: none;
+}
+
+/* Align "Muted" to the left */
+.guildTooltipWrapper__-eZlF .muteText__-eZlF {
+  text-align: left;
+}
+
+/* Hide Discord's original placeholder text */
+.searchBar_uNafB1 [data-slate-placeholder="true"] {
+    color: transparent !important;
+}
+/* Replace it with "Search" */
+.searchBar_uNafB1 [data-slate-placeholder="true"]::before {
+    content: "Search";
+    color: var(--text-muted);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* User */
+.visual-refresh div[class^="sidebar_"] section[class^="panels_"] {
+    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 1px);
+    left: var(--custom-guild-list-width);
+    bottom: 0px;
+    border-radius: 0px;
+    border: none;
+}
+.visual-refresh nav[class*=guilds_] {
+  margin-bottom: unset;
+}
+
+/* Timestamp */
+span[class*="timestampInline_"] time::before {
+  content: attr(aria-label);
+  font-size: 12px;
+}
+.header_2i8Bfm{
+  margin-bottom: 2px;
+}
+
+/* Hide Activity */
+[class*='membersGroup']:has([role=button]),
+[class*='member'] [class*='container']:has([class*='badges']) {
+  display: none;
+}
+
+/*Hide discord checkpoint*/
+[aria-label="Checkpoint"]{
+    display: none;
+}
+
+/* remove Status Reactions */
+.hoverBarButton_DpHsW6[aria-label^="Click to "],
+.separator_DpHsW6 {
+  display: none;
+}
+
+/* Hides Nitro in DMs */
+/* Hides Shop in DMs */
+/* Hidess Quests in DMs */
+[href="/store"],
+[href='/shop'],
+[href='/quest-home']{
+  display: none;
+}
+
+/* Remove Divider */
+div[class^="container__675e5"] + div[class^="e6b7699ce8339e1c-sectionDivider"] {
+    display: none !important;
+}
+.sectionDivider_u88IQl{
+  margin-top: 4px !important;
+}
+.frequentFriendsRow__1fc18{
+  margin-bottom: 12px;
+}
+
+/* Change Friends -> Home */
+[href="/channels/@me"] .name_TBNqol {
+  position: relative;
+  visibility: hidden; /* hide Friends text */
+}
+[href="/channels/@me"] .name_TBNqol::before {
+  content: "Home";
+  visibility: visible;
+  color: var(--interactive-normal);
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Hide Friends icon */
+[href="/channels/@me"] .linkButtonIcon_zln_tS {
+  display: none;
+}
+
+/* Hide Play Again */
+.container__675e5{
+  display: none;
+}
+
+/* Server thingy drop down from right to left */
+.containerDefault_yOdhm_ {
+  > div {
+    padding-left: 0.5em;
+
+    > div {
+      display: flex !important;
+      place-content: start !important;
+      flex-direction: row-reverse !important;
+    }
+  }
+}
+
+/*Hide Discover*/
+[aria-label="Discover"]{
+    display: none;
+}
+.listItem_rwEpIL:has(.wrapper_hqZPsU):has([aria-label="Discover"]){
+    display: none;
+}
+
+/* Aligned Chat Box and Typing indicator */
+:root {
+    --custom-channel-textarea-text-area-height: 42px;
+}
+
+/* Ensure text-area container is the anchor */
+.container_pog62O {
+    position: relative !important;
+}
+/* Typing indicator → top right of text-area */
+.base_U9Tvvz {
+    position: absolute !important;
+    top: -23px !important;
+    right: 12px !important;
+    bottom: unset !important;
+    left: unset !important;
+    font-size: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    pointer-events: none !important;
+    opacity: 0.9;
+}
+
+/* Upload button in the text area */
+.attachWrapper_7TM4SO {
+    height: 42px;
+    padding: 0px 0px 0px 10px !important;
+    display: flex;
+}
+
+/* Remove double background hover effect */
+.attachButton_7TM4SO.attachButton_2x8-Qn.button_hfM7yP:hover {
+    background-color: unset !important
+}
+
+/* Fixes the Annoying Space between chat and text area */
+.scrollerSpacer_8AE1Qq {
+    height: 28px !important;
+}
