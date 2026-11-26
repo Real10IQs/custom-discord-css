@@ -1,3 +1,3 @@
 # Custom discord style
-apply css via Vencord!
-[CLICK HERE](style.css) <br />
+apply css via Vencord! <br />
+[CLICK HERE](style.css)
